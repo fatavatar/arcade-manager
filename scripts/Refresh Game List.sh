@@ -6,7 +6,15 @@ rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms $HOM
 
 (cd ~/arcade-manager; git pull)
 
-bash ~/arcade-manager/scripts/update-configs.sh
+EMU_FOLDER=("nes" "mame-libretro")
+
+for emu in "$(EMU_FODLER[$@])" 
+do
+	for rom in $(ls $HOME/RetroPie/roms/$emu)
+	do
+		echo $rom
+	done
+done
 
 EMULATORS=("Nintendo NES" "MAME (Libretro)")
 
