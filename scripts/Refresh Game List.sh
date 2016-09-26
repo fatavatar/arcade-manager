@@ -8,12 +8,11 @@ rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms $HOM
 
 EMU_FOLDER=("nes" "mame-libretro")
 
-for emu in "$(EMU_FOLDER[$@])" 
+shopt -s nullglob
+
+for rom in $HOME/RetroPie/roms/mame-libretro/*.zip
 do
-	for rom in $(ls $HOME/RetroPie/roms/$emu)
-	do
-		echo $rom
-	done
+	echo $rom
 done
 
 EMULATORS=("Nintendo NES" "MAME (Libretro)")
