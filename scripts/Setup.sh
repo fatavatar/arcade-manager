@@ -38,5 +38,5 @@ sudo ldconfig
 cd ~/develop
 git clone --depth 1 https://github.com/mickelson/attract attract
 cd attract
-make USE_GLES=1
+make -j3 USE_GLES=1 
 sudo make install
