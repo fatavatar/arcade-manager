@@ -3,23 +3,30 @@
 cd ~
 mkdir -p develop
 
-sudo apt-get update
-sudo apt-get -y install cmake
-sudo apt-get -y install libflac-dev
-sudo apt-get -y install libogg-dev
-sudo apt-get -y install libvorbis-dev
-sudo apt-get -y install libopenal-dev
-#sudo apt-get -y install libjpeg8-dev
-sudo apt-get -y install libfreetype6-dev
-sudo apt-get -y install libudev-dev
-sudo apt-get -y install libavutil-dev
-sudo apt-get -y install libavcodec-dev
-sudo apt-get -y install libavformat-dev
-sudo apt-get -y install libavfilter-dev
-sudo apt-get -y install libswscale-dev
-sudo apt-get -y install libavresample-dev
-sudo apt-get -y install libfontconfig1-dev
-sudo apt-get -y install vim
+InstallPkg() {
+	if [ $(dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed") -eq 0 ];
+	then
+		sudo apt-get -y install $1;
+	fi
+}
+
+#sudo apt-get update
+InstallPkg cmake
+InstallPkg libflac-dev
+InstallPkg libogg-dev
+InstallPkg libvorbis-dev
+InstallPkg libopenal-dev
+#InstallPkg libjpeg8-dev
+InstallPkg libfreetype6-dev
+InstallPkg libudev-dev
+InstallPkg libavutil-dev
+InstallPkg libavcodec-dev
+InstallPkg libavformat-dev
+InstallPkg libavfilter-dev
+InstallPkg libswscale-dev
+InstallPkg libavresample-dev
+InstallPkg libfontconfig1-dev
+InstallPkg vim
 
 cd develop
 git clone --depth 1 https://github.com/mickelson/sfml-pi sfml-pi
