@@ -3,6 +3,7 @@
 
 # Grab the latest emulator stuff
 rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms $HOME/RetroPie/
+rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/layouts $HOME/.attract/
 
 (cd ~/arcade-manager; git pull)
 
