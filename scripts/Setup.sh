@@ -23,7 +23,7 @@ sudo apt-get -y install vim
 
 cd develop
 git clone --depth 1 https://github.com/mickelson/sfml-pi sfml-pi
-mkdir smfl-pi/build
+mkdir -p smfl-pi/build
 cd sfml-pi/build
 cmake .. -DSFML_RPI=1 -DEGL_INCLUDE_DIR=/opt/vc/include -DEGL_LIBRARY=/opt/vc/lib/libEGL.so -DGLES_INCLUDE_DIR=/opt/vc/include -DGLES_LIBRARY=/opt/vc/lib/libGLESv1_CM.so
 sudo make install
