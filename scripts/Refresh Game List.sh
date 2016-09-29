@@ -9,17 +9,45 @@ rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/initial_c
 
 EMU_FOLDER=("nes" "mame-libretro")
 
+# Install config files
+# For now we assume vertical mode.
+sudo cp ../config/all/retroarch.cfg.v /opt/retropie/configs/all/retroarch.cfg
+sudo cp ../config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libretro/retroarch.cfg
+sudo cp ../config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
+
+# Default configs for new games
+cp ../config/mame-libretro/horizontal.cfg.v $HOME/Retropie/roms/mame-libretro/horizontal.cfg
+cp ../config/mame-libretro/vertical.cfg.v $HOME/Retropie/roms/mame-libretro/vertical.cfg
+
+# Install per game config files
 shopt -s nullglob
 
 for rom in $HOME/RetroPie/roms/mame-libretro/*.zip
 do
-	echo $rom
+	echo Configuring $rom
+	if [ -f ../config/mame-libretro/${rom}.cfg ]; then
+		cp ../config/mame-libretro/${rom}.cfg $HOME/Retropie/roms/mame-libretro/
+	else if isVertical $rom; then
+		ln -sf vertical.cfg $HOME/Retropie/roms/mame-libretro/${rom}.cfg
+	else
+		ln -sf horizontal.cfg $HOME/Retropie/roms/mame-libretro/${rom}.cfg
+	fi
+fi
+
+#Copy in all overlays
+sudo mkdir -p /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays
+sudo cp -r ../overlays/* /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays
+sudo mkdir -p /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
+sudo cp -r ../shaders/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
+
+	
 done
 
+# Refresh rom listing
 EMULATORS=("Nintendo NES" "MAME (Libretro)")
-
 attract -b "${EMULATORS[@]}" -o multi
-
 attract -s "${EMULATORS[@]}"
+
+
 
 
