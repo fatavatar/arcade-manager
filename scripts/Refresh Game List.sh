@@ -3,7 +3,6 @@
 
 # Grab the latest emulator stuff
 rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms/ $HOME/RetroPie/roms
-rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/initial_config/ $HOME/.attract/
 
 (cd ~/arcade-manager; git pull)
 
@@ -36,9 +35,9 @@ fi
 
 #Copy in all overlays
 sudo mkdir -p /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays
-sudo cp -r ../overlays/* /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays
+sudo cp -r ../overlays/* /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays/
 sudo mkdir -p /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
-sudo cp -r ../shaders/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
+sudo cp -r ../shader/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/
 
 	
 done

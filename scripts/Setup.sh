@@ -54,5 +54,5 @@ if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
 	echo "cat ~/tmp.pub >>  ~/.ssh/authorized_keys" | ssh fatavatar@thelucks.org /bin/bash
 fi
 
-#Perform the initial sync of data
-. Refresh\ Game\ List.sh
+mkdir -p $HOME/.attract
+rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/initial_config/ $HOME/.attract/
