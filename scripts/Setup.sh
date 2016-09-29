@@ -53,3 +53,6 @@ if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
 	scp $HOME/.ssh/id_rsa.pub fatavatar@thelucks.org:~/tmp.pub
 	echo "cat ~/tmp.pub >>  ~/.ssh/authorized_keys" | ssh fatavatar@thelucks.org /bin/bash
 fi
+
+#Perform the initial sync of data
+. Refresh\ Game\ List.sh
