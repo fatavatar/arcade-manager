@@ -23,13 +23,13 @@ shopt -s nullglob
 
 for rom in $HOME/RetroPie/roms/mame-libretro/*.zip
 do
-	echo Configuring $rom
-	if [ -f ../config/mame-libretro/${rom}.cfg ]; then
-		cp ../config/mame-libretro/${rom}.cfg $HOME/RetroPie/roms/mame-libretro/
+	echo Configuring $(basename $rom)
+	if [ -f ../config/mame-libretro/$(basename $rom).cfg ]; then
+		cp ../config/mame-libretro/$(basename $rom).cfg $HOME/RetroPie/roms/mame-libretro/
 	else if isVertical $rom; then
-		ln -sf vertical.cfg $HOME/RetroPie/roms/mame-libretro/${rom}.cfg
+		ln -sf vertical.cfg ${rom}.cfg
 	else
-		ln -sf horizontal.cfg $HOME/RetroPie/roms/mame-libretro/${rom}.cfg
+		ln -sf horizontal.cfg ${rom}.cfg
 	fi
 fi
 
