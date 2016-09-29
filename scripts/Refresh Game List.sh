@@ -15,8 +15,8 @@ sudo cp ../config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libre
 sudo cp ../config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
 
 # Default configs for new games
-cp ../config/mame-libretro/horizontal.cfg.v $HOME/Retropie/roms/mame-libretro/horizontal.cfg
-cp ../config/mame-libretro/vertical.cfg.v $HOME/Retropie/roms/mame-libretro/vertical.cfg
+cp ../config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
+cp ../config/mame-libretro/vertical.cfg.v $HOME/RetroPie/roms/mame-libretro/vertical.cfg
 
 # Install per game config files
 shopt -s nullglob
@@ -25,11 +25,11 @@ for rom in $HOME/RetroPie/roms/mame-libretro/*.zip
 do
 	echo Configuring $rom
 	if [ -f ../config/mame-libretro/${rom}.cfg ]; then
-		cp ../config/mame-libretro/${rom}.cfg $HOME/Retropie/roms/mame-libretro/
+		cp ../config/mame-libretro/${rom}.cfg $HOME/RetroPie/roms/mame-libretro/
 	else if isVertical $rom; then
-		ln -sf vertical.cfg $HOME/Retropie/roms/mame-libretro/${rom}.cfg
+		ln -sf vertical.cfg $HOME/RetroPie/roms/mame-libretro/${rom}.cfg
 	else
-		ln -sf horizontal.cfg $HOME/Retropie/roms/mame-libretro/${rom}.cfg
+		ln -sf horizontal.cfg $HOME/RetroPie/roms/mame-libretro/${rom}.cfg
 	fi
 fi
 
