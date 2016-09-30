@@ -1,7 +1,7 @@
 #!/bin/bash
 
 isVertical() {
-	return 0
+	return 1
 }
 
 # Grab the latest emulator stuff
