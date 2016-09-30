@@ -47,7 +47,7 @@ EMULATORS=("Nintendo NES" "MAME (Libretro)")
 attract -b "${EMULATORS[@]}" -o multi
 attract -s "${EMULATORS[@]}"
 
-cp "~/arcade-manager/scripts/Refresh Game List.sh" "~/.attract/Attract Mode Setup"
+cp "$HOME/arcade-manager/scripts/Refresh Game List.sh" "$HOME/.attract/Attract Mode Setup/"
 
 
 
