@@ -58,6 +58,8 @@ attract -b "${EMULATORS[@]}" -o multi
 attract -s "${EMULATORS[@]}"
 
 cp "$HOME/arcade-manager/scripts/Refresh Game List.sh" "$HOME/.attract/Attract Mode Setup/"
+cp "$HOME/arcade-manager/scripts/Backup Config.sh" "$HOME/.attract/Attract Mode Setup/"
+attract -b "Attract Mode Setup"
 
 
 
