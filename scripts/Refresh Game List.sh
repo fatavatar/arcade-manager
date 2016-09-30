@@ -26,7 +26,7 @@ for script in ES-Start autostart AM-Start
 do
 	sudo cp $HOME/arcade-manager/scripts/${script}.sh /opt/retropie/configs/all
 done
-cp "$HOME/arcade-manager/scipts/Switch To Attract Mode.sh" $HOME/RetroPie/retropiemenu/
+cp "$HOME/arcade-manager/scripts/Switch To Attract Mode.sh" $HOME/RetroPie/retropiemenu/
 
 # Install per game config files
 shopt -s nullglob
