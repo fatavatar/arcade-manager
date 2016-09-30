@@ -1,7 +1,7 @@
 #!/bin/bash
 
 isVertical() {
-	return 1
+	return grep -q $1 $HOME/arcade-manager/scripts/vgames.txt
 }
 
 # Grab the latest emulator stuff
@@ -40,7 +40,7 @@ do
 	echo Configuring $(basename $rom)
 	if [ -f $HOME/arcade-manager/config/mame-libretro/$(basename $rom).cfg ]; then
 		cp ../config/mame-libretro/$(basename $rom).cfg $HOME/RetroPie/roms/mame-libretro/
-	else if isVertical $rom; then
+	else if isVertical $(basename $rom); then
 		ln -sf vertical.cfg ${rom}.cfg
 	else
 		ln -sf horizontal.cfg ${rom}.cfg
