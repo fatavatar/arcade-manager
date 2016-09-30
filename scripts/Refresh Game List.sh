@@ -1,5 +1,8 @@
 #!/bin/bash
 
+isVertical() {
+	exit 0
+}
 
 # Grab the latest emulator stuff
 rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms/ $HOME/RetroPie/roms
