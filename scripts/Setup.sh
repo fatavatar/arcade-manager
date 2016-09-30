@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pwd=$PWD
+
 cd ~
 mkdir -p develop
 
@@ -56,4 +58,4 @@ fi
 
 mkdir -p $HOME/.attract
 rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/initial_config/ $HOME/.attract/
-cp "Refresh Game List.sh" "~/.attract/Attract Mode Setup"
+cp "$pwd/Refresh Game List.sh" "~/.attract/Attract Mode Setup"
