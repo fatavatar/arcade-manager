@@ -5,6 +5,10 @@ isVertical() {
 }
 
 # Grab the latest emulator stuff
+## Clean up old roms
+find $HOME/RetroPie/roms/ -name "*.zip*" | xargs rm -rf
+find $HOME/RetroPie/roms/ -name "*.nes" | xargs rm -rf
+
 rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms/ $HOME/RetroPie/roms
 
 (cd ~/arcade-manager; git pull)
