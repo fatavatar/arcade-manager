@@ -18,6 +18,13 @@ sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/ne
 cp $HOME/arcade-manager/config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
 cp $HOME/arcade-manager/config/mame-libretro/vertical.cfg.v $HOME/RetroPie/roms/mame-libretro/vertical.cfg
 
+# Helper Scripts
+for script in ES-Start autostart AM-Start
+do
+	sudo cp $HOME/arcade-manager/scripts/${script}.sh /opt/retropie/configs/all
+done
+cp "$HOME/arcade-manager/scipts/Switch To Attract Mode.sh" $HOME/RetroPie/retropiemenu/
+
 # Install per game config files
 shopt -s nullglob
 
