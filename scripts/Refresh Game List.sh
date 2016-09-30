@@ -10,13 +10,13 @@ EMU_FOLDER=("nes" "mame-libretro")
 
 # Install config files
 # For now we assume vertical mode.
-sudo cp ../config/all/retroarch.cfg.v /opt/retropie/configs/all/retroarch.cfg
-sudo cp ../config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libretro/retroarch.cfg
-sudo cp ../config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
+sudo cp $HOME/arcade-manager/config/all/retroarch.cfg.v /opt/retropie/configs/all/retroarch.cfg
+sudo cp $HOME/arcade-manager/config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libretro/retroarch.cfg
+sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
 
 # Default configs for new games
-cp ../config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
-cp ../config/mame-libretro/vertical.cfg.v $HOME/RetroPie/roms/mame-libretro/vertical.cfg
+cp $HOME/arcade-manager/config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
+cp $HOME/arcade-manager/config/mame-libretro/vertical.cfg.v $HOME/RetroPie/roms/mame-libretro/vertical.cfg
 
 # Install per game config files
 shopt -s nullglob
@@ -24,7 +24,7 @@ shopt -s nullglob
 for rom in $HOME/RetroPie/roms/mame-libretro/*.zip
 do
 	echo Configuring $(basename $rom)
-	if [ -f ../config/mame-libretro/$(basename $rom).cfg ]; then
+	if [ -f $HOME/arcade-manager/config/mame-libretro/$(basename $rom).cfg ]; then
 		cp ../config/mame-libretro/$(basename $rom).cfg $HOME/RetroPie/roms/mame-libretro/
 	else if isVertical $rom; then
 		ln -sf vertical.cfg ${rom}.cfg
@@ -35,9 +35,9 @@ fi
 
 #Copy in all overlays
 sudo mkdir -p /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays
-sudo cp -r ../overlays/* /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays/
+sudo cp -r $HOME/arcade-manager/overlays/* /opt/retropie/emulators/retroarch/overlays/arcade-bezel-overlays/
 sudo mkdir -p /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
-sudo cp -r ../shader/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/
+sudo cp -r $HOME/arcade-manager/shader/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/
 
 	
 done
