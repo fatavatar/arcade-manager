@@ -53,6 +53,7 @@ sudo cp -r $HOME/arcade-manager/overlays/* /opt/retropie/emulators/retroarch/ove
 sudo mkdir -p /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader
 sudo cp -r $HOME/arcade-manager/shader/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/
 
+sudo cp -r $HOME/arcade-manager/shader/* /opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/
 	
 done
 
@@ -63,6 +64,8 @@ attract -s "${EMULATORS[@]}"
 
 cp "$HOME/arcade-manager/scripts/Refresh Game List.sh" "$HOME/.attract/Attract Mode Setup/"
 cp "$HOME/arcade-manager/scripts/Backup Config.sh" "$HOME/.attract/Attract Mode Setup/"
+cp "$HOME/arcade-manager/scripts/Enable 2nd Player Screen" "$HOME/.attract/Attract Mode Setup/"
+rm -rf "$HOME/.attract/Attract Mode Setup/Disable 2nd Player Screen"
 attract -b "Attract Mode Setup" -o "Attract Mode Setup"
 
 
