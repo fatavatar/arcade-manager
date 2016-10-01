@@ -1,4 +1,4 @@
-video_shader = /opt/retropie/emulators/retroarch/shader/crt-pi-vertical.glslp
+video_shader = "/opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/crt-pi-vertical.glslp"
 video_shader_enable = true
 
 custom_viewport_width = "810"
