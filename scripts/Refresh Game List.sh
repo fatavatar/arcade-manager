@@ -13,13 +13,12 @@ rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms/ $HO
 
 (cd ~/arcade-manager; git pull)
 
-EMU_FOLDER=("nes" "mame-libretro")
-
 # Install config files
 # For now we assume vertical mode.
 sudo cp $HOME/arcade-manager/config/all/retroarch.cfg.v /opt/retropie/configs/all/retroarch.cfg
 sudo cp $HOME/arcade-manager/config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libretro/retroarch.cfg
 sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
+sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/atari2600/retroarch.cfg
 
 # Default configs for new games
 cp $HOME/arcade-manager/config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
@@ -57,7 +56,7 @@ sudo cp -r $HOME/arcade-manager/shader/* /opt/retropie/emulators/retroarch/shade
 done
 
 # Refresh rom listing
-EMULATORS=("Nintendo NES" "MAME (Libretro)")
+EMULATORS=("Nintendo NES" "MAME (Libretro)" "Atari 2600")
 attract -b "${EMULATORS[@]}" -o multi
 attract -s "${EMULATORS[@]}"
 
