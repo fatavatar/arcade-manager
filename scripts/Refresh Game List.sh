@@ -62,11 +62,11 @@ EMULATORS=("Nintendo NES" "MAME (Libretro)" "Atari 2600")
 attract -b "${EMULATORS[@]}" -o multi
 attract -s "${EMULATORS[@]}"
 
-cp "$HOME/arcade-manager/scripts/Refresh Game List.sh" "$HOME/.attract/Attract Mode Setup/"
 cp "$HOME/arcade-manager/scripts/Backup Config.sh" "$HOME/.attract/Attract Mode Setup/"
 cp "$HOME/arcade-manager/scripts/Enable 2nd Player Screen.sh" "$HOME/.attract/Attract Mode Setup/"
 rm -rf "$HOME/.attract/Attract Mode Setup/Disable 2nd Player Screen.sh"
 attract -b "Attract Mode Setup" -o "Attract Mode Setup"
 
+cp "$HOME/arcade-manager/scripts/Refresh Game List.sh" "$HOME/.attract/Attract Mode Setup/"
 
 
