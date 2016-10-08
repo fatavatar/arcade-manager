@@ -1,16 +1,16 @@
-video_shader = "/opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/cocktail-cab-portrait-nes.glsl"
+video_shader = /opt/retropie/emulators/retroarch/shader/crt-pi.glslp
 video_shader_enable = true
 
-custom_viewport_width = "1920"
+custom_viewport_width = "1440"
 custom_viewport_height = "1080"
-custom_viewport_x = "0"
+custom_viewport_x = "480"
 custom_viewport_y = "0"
 aspect_ratio_index = "22"
-#video_scale_integer = false
+video_scale_integer = false
 
 # Settings made here will only override settings in the global retroarch.cfg if placed above the #include line
 
-input_remapping_directory = /opt/retropie/configs/nes/
+input_remapping_directory = /opt/retropie/configs/atari2600/
 # video_smooth = false
 
 

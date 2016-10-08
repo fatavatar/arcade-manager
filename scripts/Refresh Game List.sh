@@ -19,7 +19,7 @@ rsync -e "/usr/bin/ssh" -av fatavatar@thelucks.org:arcade.thelucks.org/roms/ $HO
 sudo cp $HOME/arcade-manager/config/all/retroarch.cfg.v /opt/retropie/configs/all/retroarch.cfg
 sudo cp $HOME/arcade-manager/config/mame-libretro/retroarch.cfg.v /opt/retropie/configs/mame-libretro/retroarch.cfg
 sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/nes/retroarch.cfg
-sudo cp $HOME/arcade-manager/config/nes/retroarch.cfg.v /opt/retropie/configs/atari2600/retroarch.cfg
+sudo cp $HOME/arcade-manager/config/atari2600/retroarch.cfg.v /opt/retropie/configs/atari2600/retroarch.cfg
 
 # Default configs for new games
 cp $HOME/arcade-manager/config/mame-libretro/horizontal.cfg.v $HOME/RetroPie/roms/mame-libretro/horizontal.cfg
