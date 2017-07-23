@@ -1,9 +1,12 @@
+atetckt2.zip
 1943.zip
 centiped.zip
 dkong.zip
 frogger.zip
 galaga.zip
+galaxian.zip
 invaders.zip
+invad2ct.zip
 mspacman.zip
 punchout.zip
 tempest.zip

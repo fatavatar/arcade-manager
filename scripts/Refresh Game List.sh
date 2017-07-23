@@ -1,7 +1,7 @@
 #!/bin/bash
 
 isVertical() {
-	return `grep -q $1 $HOME/arcade-manager/scripts/vgames.txt`
+	return `grep -q $1 $HOME/RetroPie/roms/vgames.txt`
 }
 
 # Grab the latest emulator stuff
