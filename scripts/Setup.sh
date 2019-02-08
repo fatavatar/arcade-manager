@@ -12,6 +12,8 @@ InstallPkg() {
 	fi
 }
 
+sudo apt-get update
+sudo apt-get upgrade
 #sudo apt-get update
 InstallPkg cmake
 InstallPkg libflac-dev
@@ -44,9 +46,21 @@ cd ~/develop
 if [ ! -d attract ]; then 
 	git clone --depth 1 -b bugfix/joyUpos-fix https://github.com/fatavatar/attract attract
 	cd attract
-	make -j3 USE_GLES=1 
-	sudo make install
+	make -j4 USE_GLES=1 
+	sudo make install USE_GLES=1
 fi
+
+
+# Autoload attractmode tty1
+if [ -e /etc/inittab ]; then
+    grep -qE '^tty1::' /etc/inittab || \
+        sed -i '/GENERIC_SERIAL/a\
+tty1::respawn:/usr/bin/attract -c /mnt/attract # attractmode' ${TARGET_DIR}/etc/inittab
+fi
+
+# Add USB to fstab
+sed -i '/^\/dev\/sda1/d' ${TARGET_DIR}/etc/fstab
+echo '/dev/sda1\t/mnt\tvfat\trw\t0\t0' >> ${TARGET_DIR}/etc/fstab
 
 #Setup SSH keys
 if [ ! -f $HOME/.ssh/id_rsa.pub ]; then
