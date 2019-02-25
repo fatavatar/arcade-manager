@@ -1,4 +1,4 @@
-video_shader = "/opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/cocktail-cab-portrait-nes.glsl"
+video_shader = "/mnt/retropie/emulators/retroarch/shader/arcade-bezel-shader/cocktail-cab-portrait-nes.glsl"
 video_shader_enable = true
 
 custom_viewport_width = "1920"
@@ -10,8 +10,8 @@ aspect_ratio_index = "22"
 
 # Settings made here will only override settings in the global retroarch.cfg if placed above the #include line
 
-input_remapping_directory = /opt/retropie/configs/nes/
+input_remapping_directory = /mnt/retropie/configs/nes/
 # video_smooth = false
 
 
-#include "/opt/retropie/configs/all/retroarch.cfg"
+#include "/mnt/retropie/configs/all/retroarch.cfg"

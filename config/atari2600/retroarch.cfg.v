@@ -1,4 +1,4 @@
-#video_shader = "/opt/retropie/emulators/retroarch/shader/arcade-bezel-shader/crt-pi-vertical.glslp"
+#video_shader = "/mnt/retropie/emulators/retroarch/shader/arcade-bezel-shader/crt-pi-vertical.glslp"
 #video_shader_enable = true
 
 custom_viewport_width = "810"
@@ -10,8 +10,8 @@ video_scale_integer = false
 
 # Settings made here will only override settings in the global retroarch.cfg if placed above the #include line
 
-input_remapping_directory = /opt/retropie/configs/atari2600/
+input_remapping_directory = /mnt/retropie/configs/atari2600/
 # video_smooth = false
 
 
-#include "/opt/retropie/configs/all/retroarch.cfg"
+#include "/mnt/retropie/configs/all/retroarch.cfg"
